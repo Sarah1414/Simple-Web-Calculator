@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Web Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calculator-container {
+            background: #ffffff;
+            padding: 35px 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+
+        .calculator-image {
+            width: 60px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin: 0 0 20px 0;
+            color: #2c3e50;
+            font-size: 24px;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        select option {
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #ff7f50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            width: 100%;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff6347;
+        }
+
+        h3 {
+            margin-top: 25px;
+            font-size: 20px;
+            color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <img src="https://cdn-icons-png.flaticon.com/512/2202/2202112.png" alt="Calculator Icon" class="calculator-image">
+        <h2>Simple Web Calculator</h2>
+        <form method="POST">
+            <input type="text" name="num1" placeholder="Enter first number" required>
+            <input type="text" name="num2" placeholder="Enter second number" required>
+            <select name="operation" required>
+                <option value="" disabled selected>Select operation</option>
+                <option value="add">➕ Add</option>
+                <option value="subtract">➖ Subtract</option>
+                <option value="multiply">✖ Multiply</option>
+                <option value="divide">➗ Divide</option>
+            </select>
+            <input type="submit" value="🚀 Calculate">
+        </form>
+        <h3>📊 Result: {{ result }}</h3>
+    </div>
+</body>
+</html>
